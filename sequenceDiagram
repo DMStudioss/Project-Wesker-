@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant User
+    participant Game
+    participant Player
+    participant Enemy
+    participant Room
+
+    User->>Game: ввод "атаковать зомби"
+    Game->>Room: getEnemies()
+    Room-->>Game: список врагов
+    Game->>Enemy: найти врага по имени
+    Game->>Player: attack(enemy)
+    Player->>Enemy: takeDamage(attackPower)
+    Enemy-->>Player: оставшееся здоровье
+    alt враг ещё жив
+        Game->>Enemy: attack(player)
+        Enemy->>Player: takeDamage(attackPower)
+        Player-->>Enemy: оставшееся здоровье
+    else враг мёртв
+        Game->>Room: removeDeadEnemies()
+        Game->>Player: pickUpItem(loot)
+    end
+    Game-->>User: вывод результата боя
