@@ -1,0 +1,192 @@
+{
+  "rooms": {
+    "entrance": {
+      "name": "Входная зона",
+      "description": "Разбитый пост охраны. На стене висит карта комплекса. Рядом лежит записка.",
+      "exits": { "north": "main_hall" },
+      "items": [ "карта", "записка_вход" ],
+      "enemies": [ "zombie" ]
+    },
+    "main_hall": {
+      "name": "Главный холл",
+      "description": "Просторное помещение с колоннами. Следы крови ведут на восток и север. В углу ящики с патронами.",
+      "exits": {
+        "south": "entrance",
+        "east": "living_quarters",
+        "north": "lab_corridor",
+        "west": "armory",
+        "up": "elevator_hall"
+      },
+      "items": [ "патроны 9мм" ],
+      "enemies": [ "zombie", "zombie" ]
+    },
+    "living_quarters": {
+      "name": "Жилой блок",
+      "description": "Каюты персонала. В одной из них на койке лежит дневник учёного.",
+      "exits": { "west": "main_hall" },
+      "items": [ "аптечка", "дневник" ],
+      "enemies": [ "zombie" ]
+    },
+    "armory": {
+      "name": "Оружейная",
+      "description": "Оружейный склад. Часть оружия растащена. На верстаке лежит дробовик и патроны 12 калибра.",
+      "exits": {
+        "east": "main_hall",
+        "west": "storage_room"
+      },
+      "items": [ "дробовик", "патроны 12 калибра", "записка_оружейная" ],
+      "enemies": []
+    },
+    "storage_room": {
+      "name": "Хранилище",
+      "description": "Запертое помещение со стеллажами. Для входа требуется ключ-карта 1 уровня.",
+      "exits": { "east": "armory" },
+      "items": [ "автомат", "броня" ],
+      "enemies": [],
+      "requires_key": "ключ-карта 1 уровня"
+    },
+    "lab_corridor": {
+      "name": "Лабораторный коридор",
+      "description": "Стеклянные колбы разбиты, в воздухе химический запах. На востоке — главная лаборатория, на севере — реакторный зал, на западе — кабинет доктора.",
+      "exits": {
+        "south": "main_hall",
+        "east": "main_lab",
+        "north": "reactor_hall",
+        "west": "office_room"
+      },
+      "items": [],
+      "enemies": [ "mutant" ]
+    },
+    "main_lab": {
+      "name": "Главная лаборатория",
+      "description": "Просторная комната, заставленная оборудованием. В центре — пустая капсула. На столе записка.",
+      "exits": { "west": "lab_corridor" },
+      "items": [ "ключ-карта 1 уровня", "записка_лаб" ],
+      "enemies": [ "cerberus" ]
+    },
+    "office_room": {
+      "name": "Кабинет доктора",
+      "description": "Рабочий стол завален бумагами. На терминале мигает надпись 'Новое сообщение'.",
+      "exits": { "east": "lab_corridor" },
+      "items": [],
+      "enemies": [],
+      "terminal": "терминал_кабинет"
+    },
+    "reception_room": {
+      "name": "Приёмная",
+      "description": "Небольшая комната с диваном и автоматом с закусками. На автомате надпись: 'Принимает жетоны'.",
+      "exits": { "north": "lab_corridor" },
+      "items": [ "жетон" ],
+      "enemies": []
+    },
+    "library": {
+      "name": "Архив",
+      "description": "Высокие стеллажи с папками. На полу разбросаны документы.",
+      "exits": { "east": "lab_corridor" },
+      "items": [ "записка_архив" ],
+      "enemies": [ "zombie" ]
+    },
+    "elevator_hall": {
+      "name": "Лифтовый холл",
+      "description": "Двери лифта заклинены. Рядом лестница наверх.",
+      "exits": {
+        "down": "main_hall",
+        "up": "rooftop"
+      },
+      "items": [],
+      "enemies": []
+    },
+    "rooftop": {
+      "name": "Крыша",
+      "description": "Холодный ветер. Вертолётная площадка пуста. На краю лежит ящик.",
+      "exits": { "down": "elevator_hall" },
+      "items": [ "патроны 12 калибра", "аптечка" ],
+      "enemies": []
+    },
+    "sewage_tunnel": {
+      "name": "Канализационный туннель",
+      "description": "Сырость и вонь. Вода по щиколотку. Где-то капает...",
+      "exits": {
+        "north": "main_hall",
+        "south": "pump_station"
+      },
+      "items": [],
+      "enemies": [ "cerberus" ]
+    },
+    "pump_station": {
+      "name": "Насосная станция",
+      "description": "Гудящие насосы. На стене висит ящик с инструментами.",
+      "exits": { "north": "sewage_tunnel" },
+      "items": [ "патроны 9мм", "жетон" ],
+      "enemies": []
+    },
+    "power_room": {
+      "name": "Электрощитовая",
+      "description": "Щитки и провода. Можно восстановить питание.",
+      "exits": { "east": "main_hall" },
+      "items": [ "записка_электрика" ],
+      "enemies": [ "zombie" ]
+    },
+    "bunker_entrance": {
+      "name": "Вход в бункер",
+      "description": "Тяжёлая гермодверь с кодовым замком.",
+      "exits": {
+        "south": "main_hall",
+        "east": "bunker_inside"
+      },
+      "items": [],
+      "enemies": [],
+      "requires_code": "451"
+    },
+    "bunker_inside": {
+      "name": "Бункер",
+      "description": "Запасы продовольствия и медикаментов. На столе — аптечка.",
+      "exits": { "west": "bunker_entrance" },
+      "items": [ "аптечка", "аптечка" ],
+      "enemies": [ "zombie" ]
+    },
+    "reactor_hall": {
+      "name": "Реакторный зал",
+      "description": "Гигантский реактор гудит. Напротив — дверь с надписью 'Контрольная комната'.",
+      "exits": {
+        "south": "lab_corridor",
+        "east": "control_room"
+      },
+      "items": [],
+      "enemies": [ "mutant", "zombie" ]
+    },
+    "control_room": {
+      "name": "Контрольная комната",
+      "description": "Пульт управления реактором. В центре — капсула с антидотом. Рядом терминал самоуничтожения.",
+      "exits": {
+        "west": "reactor_hall",
+        "north": "escape_tunnel"
+      },
+      "items": [ "антидот" ],
+      "enemies": [ "progenitor" ],
+      "terminal": "терминал_самоуничтожения"
+    },
+    "escape_tunnel": {
+      "name": "Эвакуационный туннель",
+      "description": "Длинный коридор, ведущий наружу. Слышен звук сирены.",
+      "exits": {
+        "south": "control_room",
+        "exit": "surface"
+      },
+      "items": [],
+      "enemies": []
+    },
+    "surface": {
+      "name": "Поверхность",
+      "description": "Солнечный свет. Ты выбрался!",
+      "exits": {},
+      "items": [],
+      "enemies": []
+    }
+  },
+  "start_room": "entrance",
+  "win_condition": {
+    "room": "surface",
+    "has_item": "антидот"
+  }
+}

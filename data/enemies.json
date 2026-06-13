@@ -1,0 +1,30 @@
+{
+  "zombie": {
+    "name": "Зомби",
+    "health": 30,
+    "attackPower": 8,
+    "escapeChance": 80,
+    "loot": [ "патроны 9мм" ]
+  },
+  "cerberus": {
+    "name": "Цербер",
+    "health": 25,
+    "attackPower": 12,
+    "escapeChance": 40,
+    "loot": [ "патроны 9мм", "патроны 9мм" ]
+  },
+  "mutant": {
+    "name": "Мутант",
+    "health": 50,
+    "attackPower": 15,
+    "escapeChance": 30,
+    "loot": [ "аптечка", "патроны 12 калибра" ]
+  },
+  "progenitor": {
+    "name": "Прародитель",
+    "health": 200,
+    "attackPower": 25,
+    "escapeChance": 0,
+    "loot": [ "антидот" ]
+  }
+}
