@@ -9,3 +9,6 @@ Release/
 *.sdf
 *.opensdf
 *.suo
+ProjectWesker.sln
+ProjectWesker.vcxproj
+ProjectWesker.vcxproj.filters
